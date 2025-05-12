@@ -1,10 +1,10 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: Sathurshna U.
+-- Engineer: 
 -- 
--- Create Date: 05/10/2025 06:53:08 PM
+-- Create Date: 05/10/2025 07:14:57 PM
 -- Design Name: 
--- Module Name: HA - Behavioral
+-- Module Name: FA - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,18 +31,41 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity HA is
+entity FA is
     Port ( A : in STD_LOGIC;
            B : in STD_LOGIC;
+           C_in : in STD_LOGIC;
            S : out STD_LOGIC;
-           C : out STD_LOGIC);
-end HA;
+           C_OUT : out STD_LOGIC);
+end FA;
 
-architecture Behavioral of HA is
+architecture Behavioral of FA is
+COMPONENT HA
+    PORT (
+        A,B: IN STD_LOGIC;
+        S,C: OUT STD_LOGIC);
+END COMPONENT;
+
+SIGNAL HA0_S, HA0_C, HA1_S, HA1_C: STD_LOGIC;
 
 begin
 
-S <= A XOR B;
-C <= A AND B;
+HA0: HA
+    PORT MAP(
+    A => A,
+    B => B, 
+    S => HA0_S,
+    C => HA0_C
+    );
+    
+HA1: HA
+    PORT MAP(
+        A => HA0_S,
+        B => C_in,
+        S => HA1_S, 
+        C => HA1_C
+        );
+S <= HA1_S;
+C_out <= HA0_C OR HA1_C;
 
 end Behavioral;
