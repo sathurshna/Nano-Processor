@@ -114,7 +114,7 @@ A **4-bit nano processor** implemented in VHDL for the *CS1050 Computer Organiza
 - Basys 3 FPGA Development Board (optional, for hardware testing)
 - Basic knowledge of VHDL and digital design
 
-git clone https://github.com/your-username/nanoprocessor.git
+git clone https://github.com/sathurshna/nanoprocessor.git
 cd nanoprocessor/basic/src
 vivado -mode gui &  # Open in Vivado
 
@@ -128,11 +128,7 @@ end process;
 ### Installation and Setup
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/nanoprocessor-design.git
-   cd nanoprocessor-design
-   ```
-
+   
 2. **Open in Vivado**
    - Launch Vivado Design Suite
    - Create new project or open existing project file
