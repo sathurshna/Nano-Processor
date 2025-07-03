@@ -3,8 +3,6 @@
 
 This repository contains the VHDL files for the Nanoprocessor Design. The Nanoprocessor is a 4-bit processor that is capable of performing basic arithmetic. The processor is designed to be implemented on a Xilinx Vivado.
 
-<!-- Warning -->
-> **Warning:** DO NOT added a `Vivado` project folder to this repository. You may add `VHDL` files only.
 
 ## Technologies Used
 <!-- Images -->
